@@ -34,7 +34,7 @@ app.get('/', (req, res) => res.render('home'));
 app.get('/profile', (req, res) => res.render('profile'));
 app.use(authRoutes);
 app.use('/customize', (req, res) => res.render('customize'));
-app.use('/lofi', (req, res) => res.render('lofi'));
+app.use('/lofichillav1morning', (req, res) => res.render('combinations/lofichillav1morning'));
 app.use((req, res) => {
   res.status(404).render('404', {title: '404'});
 })

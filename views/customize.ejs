@@ -14,10 +14,10 @@
       <input type="radio" name="mood" id="sad" value="Sad"> Sad
       <input type="radio" name="mood" id="chill" value="Chill"> Chill
       
-      <h5>Which plant do you like:</h5>
-      <input type="radio" name="avatar" value="Cactus" checked> Cactus
-      <input type="radio" name="avatar" value="Tulip"> Tulip
-      <input type="radio" name="avatar" value="Sunflower"> Sunflower
+      <h5>Which color do you like:</h5>
+      <input type="radio" name="avatar" value="Green" checked> Green
+      <input type="radio" name="avatar" value="Purple"> Purple
+      <input type="radio" name="avatar" value="Yellow"> Yellow
 
       <h5>Prefered time of the day:</h5>
       <input type="radio" name="time" value="Morning" checked> Day
@@ -43,18 +43,23 @@
     const time = document.querySelector('input[name="time"]:checked').value;
     console.log(JSON.stringify({ mood, avatar, time }));
 
-    try {
-      const res = await fetch('/customize', { 
-        method: 'POST', 
-        body: JSON.stringify({ mood, avatar, time }),
-        headers: {'Content-Type': 'application/json'}
-      });
-      // const data = await res.json();
-      // console.log(data);
-      location.assign('/lofi');
+    if (mood === "Chill") {
+      if (avatar === "Green")
+        location.assign('/lofichillav1morning');
     }
-    catch (err) {
-      console.log(err);
-    }
+
+    // try {
+    //   const res = await fetch('/customize', { 
+    //     method: 'POST', 
+    //     body: JSON.stringify({ mood, avatar, time }),
+    //     headers: {'Content-Type': 'application/json'}
+    //   });
+    //   // const data = await res.json();
+    //   // console.log(data);
+    //   location.assign('/combinations/lofiachillav1morning');
+    // }
+    // catch (err) {
+    //   console.log(err);
+    // }
   });
 </script>

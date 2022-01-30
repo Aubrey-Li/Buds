@@ -110,6 +110,12 @@ header img{
   width: 250px;
   margin-right: 40px;
 }
+
+header .bg {
+  width: 100vh;
+  margin-right: 50vh;
+}
+
 header h2{
   font-size: 3em;
   margin-bottom: 10px;

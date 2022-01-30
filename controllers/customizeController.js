@@ -1,7 +1,7 @@
 const Lofi = require("../models/Lofi");
 
 module.exports.get_lofi = (req, res) => {
-    res.render('lofi');
+    // res.render('lofi');
 }
 
 module.exports.post_lofi = async (req, res) => {
@@ -9,7 +9,7 @@ module.exports.post_lofi = async (req, res) => {
     if (mood === "Chill") {
         const lofi = await Lofi.create({ music: './barradeen-bedtime-after-a-coffee.mp3', avatar: './purpleFlowerGuy.gif', bg: './blueSkyBkg.png'});
         console.log(lofi)
-        res.render('lofi', { lofi: lofi});
+        res.render('lofichillav1morning', { lofi: lofi});
     }
 }
 
