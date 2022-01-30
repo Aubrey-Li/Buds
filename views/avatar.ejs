@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%>
+
+<header>
+  <div class="smoothie">
+    <img src="/smoothie.png" alt="">
+  </div>
+  <div class="headings">
+    <h3>Customize your lofi music and study buddy:</h3>
+    <h5>Which plant do you like:</h5>
+    <form>
+      <input type="radio" name="choice" value="Cactus"> Cactus
+      <input type="radio" name="choice" value="Tulip"> Tulip
+      <input type="radio" name="choice" value="Sunflower"> Sunflower
+      <button>Continue</button>
+    </form>
+  </div>
+</header>
+
+
+<%- include('partials/footer'); -%>
+
+<script>
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      location.assign('/time');
+    });
+  </script>
