@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
+const customizeRoutes = require('./routes/customizeRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
@@ -33,7 +34,7 @@ app.get('/', (req, res) => res.render('home'));
 app.get('/profile', (req, res) => res.render('profile'));
 app.use(authRoutes);
 app.use('/customize', (req, res) => res.render('customize'));
-app.use('/audio', (req, res) => res.render('audio'));
+app.use('/lofi', (req, res) => res.render('lofi'));
 app.use((req, res) => {
   res.status(404).render('404', {title: '404'});
 })
