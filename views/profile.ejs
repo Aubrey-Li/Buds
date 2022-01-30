@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+<div>
+    <ul class="user-info">
+    <li class="recipe">
+    <img src="/smoothie.png" alt="smoothie recipe icon">
+    <h1> About Me </h1>
+    <HR></HR>
+    <div style="padding: 20px 40px 10px 40px;">
+        <h4 style="text-align: left;"> Name: <%= user.name %> </h4>
+        <h4 style="text-align: left;"> Email: <%= user.email %> </h4>
+        <h4 style="text-align: left;"> My music taste: <%= user.bio %> </h4>
+    </div>
+    </li>
+    </ul>
+</div>
+
+<%- include('partials/footer'); -%>
