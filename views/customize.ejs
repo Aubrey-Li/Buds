@@ -1,41 +1,40 @@
 <%- include('partials/header'); -%>
 
 <header>
-  <div class="smoothie">
-    <img src="/yellow_ava.gif" style="width:500px;" alt="">
-  </div>
-  <div class="headings">
+  <!-- <div class="smoothie">
+    <img src="/yellow_ava.gif" style="width: 500px" alt="" />
+  </div> -->
+  <div style="margin-left:25%">
     <h3>Customize your lofi music and study buddy:</h3>
-    <p> Note: Please select one option for each question</p>
+    <p>Note: Please select one option for each question</p>
     <br />
     <form>
       <h5>Your Mood:</h5>
-      <input type="radio" name="mood" id="happy" value="Happy" checked> Happy
-      <input type="radio" name="mood" id="sad" value="Sad"> Sad
-      <input type="radio" name="mood" id="chill" value="Chill"> Chill
-      
+      <input type="radio" name="mood" id="happy" value="Happy" checked /> Happy
+      <input type="radio" name="mood" id="sad" value="Sad" /> Sad
+      <input type="radio" name="mood" id="chill" value="Chill" /> Chill
+
       <h5>Which color do you like:</h5>
-      <input type="radio" name="avatar" value="Green" checked> Green
-      <input type="radio" name="avatar" value="Purple"> Purple
-      <input type="radio" name="avatar" value="Yellow"> Yellow
+      <input type="radio" name="avatar" value="Green" checked /> Green
+      <input type="radio" name="avatar" value="Purple" /> Purple
+      <input type="radio" name="avatar" value="Yellow" /> Yellow
 
       <h5>Prefered time of the day:</h5>
-      <input type="radio" name="time" value="Morning" checked> Day
-      <input type="radio" name="time" value="Dusk"> Dusk
-      <input type="radio" name="time" value="Night"> Night
+      <input type="radio" name="time" value="Morning" checked /> Day
+      <input type="radio" name="time" value="Dusk" /> Dusk
+      <input type="radio" name="time" value="Night" /> Night
 
       <button>Generate</button>
     </form>
   </div>
 </header>
 
-
 <%- include('partials/footer'); -%>
 
 <script>
-  const form = document.querySelector('form');
-  
-  form.addEventListener('submit', async (e) => {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const mood = document.querySelector('input[name="mood"]:checked').value;
@@ -44,13 +43,40 @@
     console.log(JSON.stringify({ mood, avatar, time }));
 
     if (mood === "Chill") {
-      if (avatar === "Green")
-        location.assign('/lofichillav1morning');
+      if (avatar === "Green") {
+        if (time === "Morning") {
+          location.assign("/lofichillav1morning");
+        } else if (time === "Dusk") {
+          location.assign("/lofichillav1dusk");
+        } else {
+          location.assign("/lofichillav1night");
+        }
+      }
+      else if (avatar === "Purple") {
+        if (time === "Morning") {
+          location.assign("/lofichillav2morning");
+        } else if (time === "Dusk") {
+          location.assign("/lofichillav2dusk");
+        } else {
+          location.assign("/lofichillav2night");
+        }
+      }
+      else {
+        if (time === "Morning") {
+          location.assign("/lofichillav3morning");
+        } else if (time === "Dusk") {
+          location.assign("/lofichillav3dusk");
+        } else {
+          location.assign("/lofichillav3night");
+        }
+      } 
+    } else {
+      location.assign("/lofidancemorning");
     }
 
     // try {
-    //   const res = await fetch('/customize', { 
-    //     method: 'POST', 
+    //   const res = await fetch('/customize', {
+    //     method: 'POST',
     //     body: JSON.stringify({ mood, avatar, time }),
     //     headers: {'Content-Type': 'application/json'}
     //   });

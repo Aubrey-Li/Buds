@@ -35,6 +35,16 @@ app.get('/profile', (req, res) => res.render('profile'));
 app.use(authRoutes);
 app.use('/customize', (req, res) => res.render('customize'));
 app.use('/lofichillav1morning', (req, res) => res.render('combinations/lofichillav1morning'));
+app.use('/lofichillav1dusk', (req, res) => res.render('combinations/lofichillav1dusk'));
+app.use('/lofichillav1night', (req, res) => res.render('combinations/lofichillav1night'));
+app.use('/lofichillav2morning', (req, res) => res.render('combinations/lofichillav2morning'));
+app.use('/lofichillav2dusk', (req, res) => res.render('combinations/lofichillav2dusk'));
+app.use('/lofichillav2night', (req, res) => res.render('combinations/lofichillav2night'));
+app.use('/lofichillav3morning', (req, res) => res.render('combinations/lofichillav3morning'));
+app.use('/lofichillav3dusk', (req, res) => res.render('combinations/lofichillav3dusk'));
+app.use('/lofichillav3night', (req, res) => res.render('combinations/lofichillav3night'));
+app.use('/lofidancemorning', (req, res) => res.render('combinations/lofidancemorning'));
+
 app.use((req, res) => {
   res.status(404).render('404', {title: '404'});
 })

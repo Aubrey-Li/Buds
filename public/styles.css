@@ -133,6 +133,11 @@ header h3{
   width: 50%;
 }
 
+header .headings {
+  margin-left: 40px;
+}
+
+
 header .btn{
   margin-top: 20px;
   padding: 12px 18px;
@@ -152,6 +157,31 @@ header .btn{
   padding: 10px 16px;
   letter-spacing: 2px;
 }
+
+.lofi .container {
+  position: relative; 
+  display: flex; 
+  justify-content: center
+}
+
+.lofi .container .bg{
+  width: 1100px;
+}
+
+.lofi .container .avatar{
+  z-index: 100; 
+  left: 55vh; 
+  position: absolute; 
+  top: 26vh
+}
+
+.lofi .audio {
+  position: relative; 
+  display: flex; 
+  justify-content: center
+}
+
+
 /* activities display */
 .recipes{
   display: grid;
